@@ -15,9 +15,37 @@ let finalResult = 0;
 let operator = "";
 let activeOperator = false;
 
-const calculate = () => {
-  actResult = parseFloat($(".result").text());
+document.querySelector("#ac").addEventListener("click", () => {
+  document.querySelector(".result").innerHTML = "0";
+});
 
+document.querySelector("#sign").addEventListener("click", () => {
+  if (firstChar() === "-") {
+    result = document.querySelector(".result");
+    sbstr = result.substring(1, result.length);
+    document.querySelector(".result").innerHTML = sbstr;
+  } else if (!emptyResult()) {
+    prepend("-");
+  }
+});
+
+document.querySelector("#percentage").addEventListener("click", () => {
+  if (emptyResult()) {
+    percentage = parseFloat(document.querySelector(".result")) / 100;
+    document.querySelector(".result").innerHTML = percentage;
+  }
+});
+
+document.querySelector(".operator").addEventListener("click", () => {
+  if (emptyResult()) {
+    percentage = parseFloat(document.querySelector(".result")) / 100;
+    document.querySelector(".result").innerHTML = percentage;
+  }
+});
+
+const calculate = () => {
+  actResult = parseFloat(document.querySelector(".result"));
+  // ???????????????????????????????????????????????????????????????????????????
   switch (operator) {
     case "plus":
       finalResult += actResult;
@@ -34,4 +62,27 @@ const calculate = () => {
     default:
       break;
   }
+};
+
+const emptyResult = () => {
+  return document.querySelector(".result") === "";
+};
+
+const hasChar = (char) => {
+  result = document.querySelector(".result");
+  return result.indexOf(char) !== -1;
+};
+
+const firstChar = () => {
+  return document.querySelector(".result").charAt(0);
+};
+
+const append = (txt) => {
+  result = document.querySelector(".result");
+  result += txt;
+};
+
+const prepend = (sign) => {
+  result = document.querySelector(".result");
+  result += sign;
 };
