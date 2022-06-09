@@ -12,4 +12,18 @@
   align-items: flex-end;
   padding: 0 0 15px 0;
   font-size: 5rem;
+  width: 290px;
+  height: 150px;
+  overflow-x: hidden;
+}
+
+.calculator .keyboard {
+  width: 290px;
+  height: 350px;
+}
+
+/** FIRST ROW */
+
+.keyboard .row:first-child .sub-col:last-child {
+  background-color: #ffffff;
 }
