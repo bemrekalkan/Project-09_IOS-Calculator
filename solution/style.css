@@ -40,4 +40,39 @@ section {
 }
 
 .btn.special {
+  color: black;
+  background-color: rgb(120, 120, 120);
+}
+
+.btn.special:hover {
+  color: white;
+  background-color: rgb(170, 170, 170);
+}
+
+.btn.operator {
+  background-color: rgb(252, 141, 12);
+}
+
+.btn.btn.operator:hover {
+  background-color: rgb(255, 191, 62);
+}
+
+.btn.number,
+.btn.decimal {
+  background-color: rgb(38, 38, 38);
+}
+
+.btn.number:hover,
+.btn.decimal:hover {
+  background-color: rgb(88, 88, 88);
+}
+
+#zero {
+  border-radius: 50px;
+  width: 118px;
+}
+
+#zero p {
+  padding-left: 18px;
+  text-align: left;
 }
