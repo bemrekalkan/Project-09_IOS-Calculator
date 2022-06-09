@@ -8,43 +8,57 @@
     <link rel="stylesheet" href="./solution/style.css" />
   </head>
   <body>
-    <div class="calculator card">
+    <section>
+      <div class="container">
+        <!--? PANEL -->
+        <div class="panel">
+          <p class="result"></p>
+        </div>
 
-      <input type="text" class="calculator-screen z-depth-1" value="" disabled />
-      <input type="text" class="calculator-screen z-depth-1" value="" disabled />
-  
-  
-      <div class="calculator-keys">
-  
-        <button type="button" class="operator all-clear" value="C">C</button>
-        <button type="button" class="operator" value="+/-">+/-</button>
-        <button type="button" class="operator" value="%">%</button>
-        <button type="button" class="operators" value="/">&divide;</button>
-  
-        <button type="button" value="7" class="">7</button>
-        <button type="button" value="8" class="">8</button>
-        <button type="button" value="9" class="">9</button>
-        <button type="button" value="x" class="operators">x</button>
-  
-  
-        <button type="button" value="4" class="">4</button>
-        <button type="button" value="5" class="">5</button>
-        <button type="button" value="6" class="">6</button>
-        <button type="button" value="-" class="operators">-</button>
-  
-  
-        <button type="button" value="1" class="">1</button>
-        <button type="button" value="2" class="">2</button>
-        <button type="button" value="3" class="">3</button>
-        <button type="button" value="+" class="operators">+</button>
-  
-  
-        <button type="button" value="0" class="zero">0</button>
-        <button type="button" class="decimal" value=".">,</button>
-        <button type="button" class="operators" value="=">=</button>        
+        <!--? BUTTONS -->
+
+        <table>
+          <!--? ROW-1 -->
+          <tr>
+            <td><button id="ac" class="btn special">AC</button></td>
+            <td><button id="sign" class="btn special">+/-</button></td>
+            <td><button id="percentage" class="btn special">%</button></td>
+            <td><button id="division" class="btn operator">/</button></td>
+          </tr>
+
+          <!--? ROW-2 -->
+          <tr>
+            <td><button id="seven" class="btn number">7</button></td>
+            <td><button id="eight" class="btn number">8</button></td>
+            <td><button id="nine" class="btn number">9</button></td>
+            <td><button id="multiplication" class="btn operator">x</button></td>
+          </tr>
+
+          <!--? ROW-3 -->
+          <tr>
+            <td><button id="four" class="btn number">4</button></td>
+            <td><button id="five" class="btn number">5</button></td>
+            <td><button id="six" class="btn number">6</button></td>
+            <td><button id="subtraction" class="btn operator">-</button></td>
+          </tr>
+
+          <!--? ROW-4 -->
+          <tr>
+            <td><button id="one" class="btn number">1</button></td>
+            <td><button id="two" class="btn number">2</button></td>
+            <td><button id="three" class="btn number">3</button></td>
+            <td><button id="plus" class="btn operator">+</button></td>
+          </tr>
+
+          <!--? ROW-5 -->
+          <tr>
+            <td colspan="2"><button id="zero" class="btn number">0</button></td>
+            <td><button id="point" class="btn decimal">,</button></td>
+            <td><button id="equal" class="btn operator">=</button></td>
+          </tr>
+        </table>
       </div>
-    </div>
-  </div>
-  <script src="./solution/index.js"></script>
+    </section>
+    <script src="./solution/index.js"></script>
   </body>
 </html>
