@@ -8,69 +8,42 @@
     <link rel="stylesheet" href="./solution/style.css" />
   </head>
   <body>
-    <div class="calculator">
-      <div class="screen">0</div>
-      <div class="keyboard">
-        <!--? OPERATORS -->
-        <div class="row">
-          <div
-            class="sub-col"
-            data-button-type="operator"
-            data-value="clear"
-            id="clear-button"
-          >
-            AC
-          </div>
+    <div class="calculator card">
 
-          <div class="sub-col" data-button-type="operator" data-value="+/-">
-            +/-
-          </div>
-
-          <div class="sub-col" data-button-type="operator" data-value="%">
-            %
-          </div>
-
-          <div class="sub-col" data-button-type="operator" data-value="/">
-            ÷
-          </div>
-        </div>
-
-        <!--? NUMBERS -->
-        <div class="row">
-          <div class="sub-col" data-button-type="digit" data-value="7">7</div>
-          <div class="sub-col" data-button-type="digit" data-value="8">8</div>
-          <div class="sub-col" data-button-type="digit" data-value="9">9</div>
-          <div class="sub-col" data-button-type="operator" data-value="*">
-            x
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="sub-col" data-button-type="digit" data-value="4">4</div>
-          <div class="sub-col" data-button-type="digit" data-value="5">5</div>
-          <div class="sub-col" data-button-type="digit" data-value="6">6</div>
-          <div class="sub-col" data-button-type="operator" data-value="-">
-            -
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="sub-col" data-button-type="digit" data-value="1">1</div>
-          <div class="sub-col" data-button-type="digit" data-value="2">2</div>
-          <div class="sub-col" data-button-type="digit" data-value="3">6</div>
-          <div class="sub-col" data-button-type="operator" data-value="+">
-            +
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="sub-col" data-button-type="digit" data-value="0">0</div>
-          <div class="sub-col" data-button-type="digit" data-value=".">,</div>
-          <div class="sub-col" data-button-type="operator" data-value="=">
-            =
-          </div>
-        </div>
+      <input type="text" class="calculator-screen z-depth-1" value="" disabled />
+      <input type="text" class="calculator-screen z-depth-1" value="" disabled />
+  
+  
+      <div class="calculator-keys">
+  
+        <button type="button" class="operator" value="C">C</button>
+        <button type="button" class="operator" value="+/-">+/-</button>
+        <button type="button" class="operator" value="%">%</button>
+        <button type="button" class="operators" value="/">&divide;</button>
+  
+        <button type="button" value="7" class="">7</button>
+        <button type="button" value="8" class="">8</button>
+        <button type="button" value="9" class="">9</button>
+        <button type="button" value="x" class="operators">x</button>
+  
+  
+        <button type="button" value="4" class="">4</button>
+        <button type="button" value="5" class="">5</button>
+        <button type="button" value="6" class="">6</button>
+        <button type="button" value="-" class="operators">-</button>
+  
+  
+        <button type="button" value="1" class="">1</button>
+        <button type="button" value="2" class="">2</button>
+        <button type="button" value="3" class="">3</button>
+        <button type="button" value="+" class="operators">+</button>
+  
+  
+        <button type="button" value="0" class="">0</button>
+        <button type="button" class="" value=".">,</button>
+        <button type="button" class="operators" value="=">=</button>        
       </div>
     </div>
+  </div>
   </body>
 </html>
