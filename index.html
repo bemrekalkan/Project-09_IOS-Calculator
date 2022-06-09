@@ -6,5 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IOS Calculator</title>
   </head>
-  <body></body>
+  <body>
+    <div class="calculator">
+      <div class="screen">0</div>
+      <div class="keyboard">
+        <!--? OPERATORS -->
+        <div class="row">
+          <div
+            class="sub-col"
+            data-button-type="operator"
+            data-value="clear"
+            id="clear-button"
+          >
+            AC
+          </div>
+
+          <div class="sub-col" data-button-type="operator" data-value="+/-">
+            +/-
+          </div>
+
+          <div class="sub-col" data-button-type="operator" data-value="%">
+            %
+          </div>
+
+          <div class="sub-col" data-button-type="operator" data-value="/">
+            ÷
+          </div>
+        </div>
+
+        <div class="row"></div>
+      </div>
+    </div>
+  </body>
 </html>
