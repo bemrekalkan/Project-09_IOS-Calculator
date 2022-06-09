@@ -1,0 +1,15 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  min-width: 290px;
+  font-size: 1.3rem;
+}
+
+.calculator .screen {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  padding: 0 0 15px 0;
+  font-size: 5rem;
+}
