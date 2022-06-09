@@ -36,10 +36,43 @@ document.querySelector("#percentage").addEventListener("click", () => {
   }
 });
 
-document.querySelector(".operator").addEventListener("click", () => {
+document.querySelector(".operator").addEventListener("click", (e) => {
+  id = e.target.id;
+  if (id === "equal") {
+    calculate();
+    document.querySelector(".result").innerHTML = finalResult;
+    operator = "";
+    activeOperator = false;
+  } else {
+    operator = id;
+    activeOperator = true;
+  }
+});
+
+document.querySelector(".number").addEventListener("click", (e) => {
+  id = e.target.id;
+  num = numbers[id];
+
+  if (activeOperator) {
+    finalResult = parseFloat(document.querySelector(".result"));
+    document.querySelector(".result").innerHTML = "";
+    activeOperator = false;
+  }
+
+  if (firstChar() === "0") {
+    if (hasChar(".")) {
+      append(num);
+    } else {
+      append(num);
+    }
+  }
+});
+
+document.querySelector("#point").addEventListener("click", () => {
   if (emptyResult()) {
-    percentage = parseFloat(document.querySelector(".result")) / 100;
-    document.querySelector(".result").innerHTML = percentage;
+    append("0.");
+  } else if (!hasChar()) {
+    append(".");
   }
 });
 
