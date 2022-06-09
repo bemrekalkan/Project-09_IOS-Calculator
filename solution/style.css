@@ -38,20 +38,21 @@ button {
   height: 60px;
   font-size: 2rem !important;
   border-radius: 50%;
-  background-color: gray;
+  background-color: rgb(80, 80, 80);
   color: white;
 }
 .operator {
-  background-color: lightgray;
+  background-color: rgb(162, 162, 162);
   color: black;
 }
 .operators {
   background-color: orange;
 }
 
-.equal-sign {
-  height: 98%;
-  grid-area: 2 / 4 / 6 / 5;
+.zero {
+  width: 100%;
+  grid-area: 5 / 1 / 5 / 3;
+  border-radius: 25px;
 }
 
 .calculator-keys {
