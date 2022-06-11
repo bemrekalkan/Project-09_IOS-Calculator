@@ -35,6 +35,13 @@ btnContainer.addEventListener("click", (e) => {
     selectOperator(e.target.textContent);
     updateResult();
   }
+
+  //? for equal button:
+  if (e.target.id.contains("equal")) {
+    calculate();
+    updateResult();
+    equalOrPercentPressed = true;
+  }
 });
 
 //! addNumber() Function:
@@ -86,6 +93,38 @@ const updateResult = () => {
   }
   inputNumber.textContent = currentOperand;
   result.textContent = `${previousOperand} ${operation}`;
+};
+
+//! calculate() Function:
+const calculate = () => {
+  let calculation = 0;
+
+  const prev = Number(previousOperand);
+  const current = Number(currentOperand);
+
+  switch (operation) {
+    case "+":
+      calculation = prev + current;
+      break;
+    case "-":
+      calculation = prev - current;
+      break;
+    case "x":
+      calculation = prev * current;
+      break;
+    case "÷":
+      calculation = prev / current;
+      break;
+    default:
+      //! We'll say return so that if no operation is pressed but `=` is pressed, the function will return.
+      return;
+  }
+
+  currentOperand = calculation;
+
+  //? We need to delete the previousOperand and operation so that they do not appear on the screen when the `=` button is clicked.
+  previousOperand = "";
+  operation = "";
 };
 
 document.querySelector("#sign").addEventListener("click", () => {
