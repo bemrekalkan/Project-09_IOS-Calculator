@@ -13,40 +13,39 @@ body {
   justify-content: center;
 }
 
-section {
-  display: flex;
-  justify-content: center;
-}
-
 .container {
-  background: black;
-  border-radius: 50px;
-  color: white;
-  height: 800px;
-  width: 80%;
-  max-width: 500px;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  background: black;
+  border-radius: 50px;
+  color: white;
+  height: 80vh;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
 }
 
 .panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   height: 15rem;
   width: 100%;
   text-align: right;
   padding: 1rem;
   font-size: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
 }
 
 .result {
   opacity: 0.5;
   font-size: 1.5rem;
   overflow: hidden;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
@@ -72,9 +71,8 @@ section {
   background-color: rgb(170, 170, 170);
 }
 
-.btn.number.zero{
+.btn.number.zero {
   border-radius: 3rem;
-  grid-column: 1 / span 2;
   justify-content: flex-start;
   padding-left: 2rem;
   width: 12rem;

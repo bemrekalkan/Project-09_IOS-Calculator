@@ -1,16 +1,18 @@
 //****************** SELECTORS ****************************/
+//? Panel:
 const result = document.querySelector(".result");
 const inputNumber = document.querySelector(".inputNumber");
-const btnContainer = document.querySelector(".buttons-container");
-console.log(btnContainer);
 
+//? Button Container:
+const btnContainer = document.querySelector(".buttons-container");
+
+//? Variable definitions to use:
 let currentOperand = "";
 let previousOperand = "";
 let operation = "";
 let equalOrPercentPresssed = false;
 
 //? Event definition for the container carrying the buttons:
-
 btnContainer.addEventListener("click", (e) => {
   //! for numbers:
   if (e.target.classList.contains("number")) {
@@ -76,13 +78,23 @@ const addNumber = (num) => {
 
   //?The flag method is used to prevent overwriting when a new number is entered while there is a number on the screen:
   if (equalOrPercentPresssed) {
-    currOperand = num;
+    currentOperand = num;
     equalOrPercentPresssed = false;
     return;
   }
 
   //? Concatenate entered numbers:
   currentOperand += num;
+};
+
+//! updateResult() Function:
+const updateResult = () => {
+  //? used toExponential() to fit the result to the screen:
+  if (currentOperand.toString().length > 11) {
+    currentOperand = Number(currentOperand).toExponential(3);
+  }
+  inputNumber.textContent = currentOperand;
+  result.textContent = `${previousOperand} ${operation}`;
 };
 
 //! selectOperator() Function:
@@ -96,16 +108,6 @@ const selectOperator = (op) => {
   operation = op;
   previousOperand = currentOperand;
   currentOperand = "";
-};
-
-//! updateResult() Function:
-const updateResult = () => {
-  //? used toExponential() to fit the result to the screen:
-  if (currentOperand.toString().length > 11) {
-    currentOperand = Number(currentOperand).toExponential(3);
-  }
-  inputNumber.textContent = currentOperand;
-  result.textContent = `${previousOperand} ${operation}`;
 };
 
 //! calculate() Function:
