@@ -100,12 +100,12 @@ section {
   background-color: rgb(88, 88, 88);
 }
 
-#zero {
+.zero {
   border-radius: 50px;
   width: 118px;
 }
 
-#zero p {
+.zero p {
   padding-left: 18px;
   text-align: left;
 }

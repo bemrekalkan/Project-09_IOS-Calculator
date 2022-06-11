@@ -20,7 +20,6 @@ btnContainer.addEventListener("click", (e) => {
 
   //! for operators (+, -, *, /):
   if (e.target.classList.contains("operator")) {
-    console.log(e.target.classList.contains("operator"));
     selectOperator(e.target.textContent);
     updateResult();
   }
