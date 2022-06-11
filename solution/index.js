@@ -24,12 +24,20 @@ let equalOrPercentPresssed = false;
 //? Event definition for the container carrying the buttons (.buttons-container):
 
 btnContainer.addEventListener("click", (e) => {
+  //? for numbers:
   if (e.target.classList.contains("number")) {
     addNumber(e.target.textContent);
-    updateDisplay();
+    updateResult();
+  }
+
+  //? for operators:
+  if (e.target.classList.contains("operator")) {
+    selectOperator(e.target.textContent);
+    updateResult();
   }
 });
 
+//! addNumber() Function:
 const addNumber = (num) => {
   //? Return if 0 was entered before and 0 is entered again:
   if (currentOperand === "0" && num === "0") return;
@@ -55,6 +63,29 @@ const addNumber = (num) => {
 
   //? Concatenate entered numbers:
   currentOperand += num;
+};
+
+//! selectOperator() Function:
+const selectOperator = (op) => {
+  //? after the first number entry:
+  if (previousOperand) {
+    calculate();
+  }
+
+  //? Variable swapping:
+  operation = op;
+  previousOperand = currentOperand;
+  currentOperand = "";
+};
+
+//! updateResult() Function:
+const updateResult = () => {
+  //? used toExponential() to fit the result to the screen:
+  if (currentOperand.toString().length > 11) {
+    currentOperand = Number(currentOperand).toExponential(3);
+  }
+  inputNumber.textContent = currentOperand;
+  result.textContent = `${previousOperand} ${operation}`;
 };
 
 document.querySelector("#sign").addEventListener("click", () => {
