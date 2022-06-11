@@ -12,11 +12,10 @@
 // };
 
 //? SELECTORS:
-
 const result = document.querySelector(".result");
 const inputNumber = document.querySelector(".inputNumber");
 const btnContainer = document.querySelector(".buttons-container");
-console.log(btnContainer);
+
 let finalResult = 0;
 let operator = "";
 let activeOperator = false;
