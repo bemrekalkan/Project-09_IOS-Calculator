@@ -11,6 +11,7 @@ section {
 
 .container {
   background-color: black;
+  color: white;
   width: auto;
   height: auto;
   padding: 1%;
@@ -78,6 +79,10 @@ section {
 }
 
 .btn.operator {
+  background-color: rgb(252, 141, 12);
+}
+
+.btn.equal {
   background-color: rgb(252, 141, 12);
 }
 

@@ -2,13 +2,14 @@
 const result = document.querySelector(".result");
 const inputNumber = document.querySelector(".inputNumber");
 const btnContainer = document.querySelector(".buttons-container");
+console.log(btnContainer);
 
 let currentOperand = "";
 let previousOperand = "";
 let operation = "";
 let equalOrPercentPresssed = false;
 
-//? Event definition for the container carrying the buttons (.buttons-container):
+//? Event definition for the container carrying the buttons:
 
 btnContainer.addEventListener("click", (e) => {
   //! for numbers:
@@ -19,19 +20,20 @@ btnContainer.addEventListener("click", (e) => {
 
   //! for operators (+, -, *, /):
   if (e.target.classList.contains("operator")) {
+    console.log(e.target.classList.contains("operator"));
     selectOperator(e.target.textContent);
     updateResult();
   }
 
   //! for equal (=) button:
-  if (e.target.id.contains("equal")) {
+  if (e.target.classList.contains("equal")) {
     calculate();
     updateResult();
-    equalOrPercentPressed = true;
+    equalOrPercentPresssed = true;
   }
 
   //! for AC button:
-  if (e.target.id.contains("ac")) {
+  if (e.target.classList.contains("ac")) {
     previousOperand = "";
     currentOperand = "";
     operation = "";
@@ -39,7 +41,7 @@ btnContainer.addEventListener("click", (e) => {
   }
 
   //! for PM (+/-) button:
-  if (e.target.id.contains("sign")) {
+  if (e.target.classList.contains("sign")) {
     if (!currentOperand) return;
     //? To get the negative of the number, we can multiply by -1:
     currentOperand *= -1;
@@ -47,7 +49,7 @@ btnContainer.addEventListener("click", (e) => {
   }
 
   //! for percent (%) button:
-  if (e.target.id.contains("percentage")) {
+  if (e.target.classList.contains("percentage")) {
     if (!currentOperand) return;
     currentOperand = currentOperand / 100;
     updateResult();
