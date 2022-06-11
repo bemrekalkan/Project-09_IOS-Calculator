@@ -11,7 +11,7 @@
 //   nine: 9,
 // };
 
-//? SELECTORS:
+//****************** SELECTORS ****************************/
 const result = document.querySelector(".result");
 const inputNumber = document.querySelector(".inputNumber");
 const btnContainer = document.querySelector(".buttons-container");
@@ -30,13 +30,13 @@ btnContainer.addEventListener("click", (e) => {
     updateResult();
   }
 
-  //! for operators:
+  //! for operators (+, -, *, /):
   if (e.target.classList.contains("operator")) {
     selectOperator(e.target.textContent);
     updateResult();
   }
 
-  //! for equal button:
+  //! for equal (=) button:
   if (e.target.id.contains("equal")) {
     calculate();
     updateResult();
@@ -58,8 +58,17 @@ btnContainer.addEventListener("click", (e) => {
     currentOperand *= -1;
     updateResult();
   }
+
+  //! for percent (%) button:
+  if (e.target.id.contains("percentage")) {
+    if (!currentOperand) return;
+    currentOperand = currentOperand / 100;
+    updateResult();
+    equalOrPercentPressed = true;
+  }
 });
 
+//************************ FUNCTIONS ***********************/
 //! addNumber() Function:
 const addNumber = (num) => {
   //? Return if 0 was entered before and 0 is entered again:
