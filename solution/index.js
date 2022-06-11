@@ -24,23 +24,39 @@ let equalOrPercentPresssed = false;
 //? Event definition for the container carrying the buttons (.buttons-container):
 
 btnContainer.addEventListener("click", (e) => {
-  //? for numbers:
+  //! for numbers:
   if (e.target.classList.contains("number")) {
     addNumber(e.target.textContent);
     updateResult();
   }
 
-  //? for operators:
+  //! for operators:
   if (e.target.classList.contains("operator")) {
     selectOperator(e.target.textContent);
     updateResult();
   }
 
-  //? for equal button:
+  //! for equal button:
   if (e.target.id.contains("equal")) {
     calculate();
     updateResult();
     equalOrPercentPressed = true;
+  }
+
+  //! for AC button:
+  if (e.target.id.contains("ac")) {
+    previousOperand = "";
+    currentOperand = "";
+    operation = "";
+    updateResult();
+  }
+
+  //! for PM (+/-) button:
+  if (e.target.id.contains("sign")) {
+    if (!currentOperand) return;
+    //? To get the negative of the number, we can multiply by -1:
+    currentOperand *= -1;
+    updateResult();
   }
 });
 
