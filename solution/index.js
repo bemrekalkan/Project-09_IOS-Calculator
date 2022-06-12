@@ -36,7 +36,7 @@ btnContainer.addEventListener("click", (e) => {
   //! for AC button:
   if (e.target.classList.contains("ac")) {
     previousOperand = "";
-    currentOperand = "";
+    currentOperand = "0";
     operation = "";
     updateResult();
   }
