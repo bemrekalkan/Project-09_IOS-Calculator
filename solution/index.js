@@ -64,14 +64,14 @@ const addNumber = (num) => {
   //? Return if 0 was entered before and 0 is entered again:
   if (currentOperand === "0" && num === "0") return;
 
-  //? If 0 is entered first and then another number other than the . is entered, just pass the new number entered to the variable:
-  if (currentOperand === "0" && num !== ".") {
+  //? If 0 is entered first and then another number other than the , is entered, just pass the new number entered to the variable:
+  if (currentOperand === "0" && num !== ",") {
     currentOperand = num;
     return;
   }
 
-  //? Return if current number is . and previous entered number contains .:
-  if (num === "." && currentOperand.includes(".")) return;
+  //? Return if current number is , and previous entered number contains .:
+  if (num === "," && currentOperand.includes(",")) return;
 
   //? to prevent overflow:
   if (currentOperand.length > 10) return;
@@ -127,7 +127,7 @@ const calculate = () => {
     case "x":
       calculation = prev * current;
       break;
-    case "÷":
+    case "/":
       calculation = prev / current;
       break;
     default:
