@@ -54,7 +54,7 @@ btnContainer.addEventListener("click", (e) => {
     if (!currentOperand) return;
     currentOperand = currentOperand / 100;
     updateResult();
-    equalOrPercentPressed = true;
+    equalOrPercentPresssed = true;
   }
 });
 
