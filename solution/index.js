@@ -56,6 +56,15 @@ btnContainer.addEventListener("click", (e) => {
     updateResult();
     equalOrPercentPresssed = true;
   }
+
+  if (e.target.classList.contains("decimal")) {
+    if (!currentOperand) return;
+    addNumber();
+    updateResult();
+  }
+
+  // console.log(e.target.classList.contains("decimal"));
+  // console.log(e.target.classList.contains("number"));
 });
 
 //************************ FUNCTIONS ***********************/
