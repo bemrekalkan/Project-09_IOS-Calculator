@@ -59,7 +59,9 @@ btnContainer.addEventListener("click", (e) => {
 
   if (e.target.classList.contains("decimal")) {
     if (!currentOperand) return;
-    addNumber();
+    if (num === "," && currentOperand.includes(",")) return;
+    if (num === "," && currentOperand.includes(",")) return;
+
     updateResult();
   }
 
